@@ -54,13 +54,6 @@ class Projects extends Component {
             return <GithubRepoCard repo={repo} theme={theme} />;
           })}
         </div>
-        <Button
-          text={"More Projects"}
-          className="project-button"
-          href={greeting.githubProfile}
-          newTab={true}
-          theme={theme}
-        />
 
         {/* Publications  */}
         {publications.data.length > 0 ? (
@@ -72,19 +65,47 @@ class Projects extends Component {
                     className="publications-heading-text"
                     style={{ color: theme.text }}
                   >
-                    {publicationsHeader.title}
+                    Achievements
                   </h1>
-                  <p
-                    className="projects-header-detail-text subTitle"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {publicationsHeader["description"]}
-                  </p>
+                  <h2>
+                    Received 300,000 Euros funding from{" "}
+                    <a href="https://www.fnr.lu/results-2023-1-jump-call/">
+                      {" "}
+                      FNR Jump program{" "}
+                    </a>
+                  </h2>
+                  <h2>
+                    Received Gold 🥇, Silver 🥈and Bronze 🥉 Medals for
+                    excellent performance in studies during Bachelors and
+                    Masters
+                  </h2>
                 </div>
               </div>
             </Fade>
           </div>
         ) : null}
+
+        {/* Publications  */}
+        <div className="basic-projects">
+          <Fade bottom duration={2000} distance="40px">
+            <div className="publications-heading-div">
+              <div className="publications-heading-text-div">
+                <h1
+                  className="publications-heading-text"
+                  style={{ color: theme.text }}
+                >
+                  {publicationsHeader.title}
+                </h1>
+                <p
+                  className="projects-header-detail-text subTitle"
+                  style={{ color: theme.secondaryText }}
+                >
+                  {publicationsHeader["description"]}
+                </p>
+              </div>
+            </div>
+          </Fade>
+        </div>
 
         <div className="repo-cards-div-main">
           {publications.data.map((pub) => {
